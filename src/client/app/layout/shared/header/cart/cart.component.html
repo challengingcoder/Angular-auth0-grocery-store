@@ -1,0 +1,5 @@
+<a class="arrange" [routerLink]="['/cart']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+  <img class="icon" src="./assets/svg/cart.svg" />
+  <span class="items">{{(shoppingCartItems$ | async).length}}</span>
+</a>
+

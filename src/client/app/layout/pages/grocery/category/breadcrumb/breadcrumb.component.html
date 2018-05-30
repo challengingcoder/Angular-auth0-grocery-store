@@ -1,0 +1,6 @@
+<ol class="breadcrumb">
+    <li><a [routerLink]="['/groceries/']">Groceries</a></li>
+    <li><a [routerLink]="['/groceries/', cat]">{{ f[0] }}</a></li>
+    <li *ngIf="sub"><a [routerLink]="['/groceries/', cat, sub]">{{ f[1] }}</a></li>
+    <li *ngIf="subc"><a [routerLink]="['/groceries/', cat, sub, subc]">{{ f[2] }}</a></li>
+  </ol>

@@ -1,0 +1,586 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+
+//  BEM - Block Element Modifier
+//  This is how our code is structured. Please follow this layout and format.
+//  More Info: https://css-tricks.com/bem-101/
+//
+//  .steps {
+//	    &__item {		
+//		    &--first {}
+//		    &--last {}
+//		    &--active {}
+//		    &--done {}
+//	    }
+//	    &__link {}
+//  }
+
+header {
+	
+	&.main {
+		padding: 20px 0;
+
+		.arrange_unit {
+			vertical-align: middle;
+			&.logo {
+				width: 160px;
+
+				img {
+					width: 100px;
+				}			
+			}
+
+
+			&.signin {
+				text-align: center;
+				padding: 5px 0;
+			}
+		}
+		.user-nav {
+			width: 150px;
+
+			.notification {
+				padding-right: 10px;
+				vertical-align: middle;
+				color: #fff;
+			}
+
+
+			i {
+				margin-left: 5px;
+				position: relative;
+				top: -8px;
+			}	
+
+			.user {
+				@include border-radius(50px);
+				background: #fafafa;
+				border: 1px solid #ddd;
+				cursor: pointer;
+				display: inline-block;
+				text-transform: capitalize;
+
+				height: 30px;
+				text-align: center;
+				font-size: 13px;
+			
+				&.name {
+					padding: 8px;	
+				}
+				&.img {
+					width: 30px;			
+					padding: 0px;	
+				}
+			}
+
+			.dropdown-menu {
+				@include border-radius(0px);
+				background: #fafafa;
+				padding: 5px 0;
+				right: -10px;
+				top: 40px;
+				min-width: 175px;
+
+				&:after {
+					bottom: 100%;
+					right: 21px;
+					border: solid transparent;
+					content: " ";
+					height: 0;
+					width: 0;
+					position: absolute;
+					pointer-events: none;
+					border-color: rgba(136, 183, 213, 0);
+					border-bottom-color: #fafafa;
+					border-width: 5px;
+					margin-left: -5px;
+				}
+
+				a {
+					padding: 7px 20px;
+
+					&:hover {
+						background: #eee;
+					}
+				}
+
+				.active a {
+					background: #333;
+				}
+
+			}
+
+			.cart {
+				padding-left: 20px;
+				min-width: 30px;
+
+				> * {
+					display: table-cell;
+				}
+
+				&:hover {
+					.items {
+						@include opacity(1);			
+					}
+				}
+
+				.icon {
+					width: 20px;
+					margin-right: 5px;
+				}
+
+				.items {
+					@include opacity(.7);
+					@include font-size(12px);
+					vertical-align: middle;
+					color:#fff;
+					position: relative;
+    			top: -4px;
+				}
+			}	
+		}
+
+			nav {
+				&.header-nav {
+					display: inline-block;
+
+					li {
+						display: inline-block;
+						margin-right: 10px;
+						a {
+							color: $white;
+							display: block;
+							padding: 9px 12px 10px;
+							@include font-size(14px);
+							line-height: $line-height-base;
+							font-weight: $font-weight-bold;
+							position: relative;
+							background: none;
+							border-radius: 0;
+							border-bottom: 2px solid transparent;				
+
+							&:hover {
+								border-color: $white;
+							}
+
+							&.dropdown {
+								border: none;
+							}
+						}
+
+						> ul {
+							padding: 5px 0;
+							font-family: 'Permanent Marker', sans-serif;
+							box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 -1px 0px rgba(0, 0, 0, 0.02);
+							position: absolute;
+							display:none;
+							min-width: 150px;
+							background:#fff;
+							z-index: 1;
+							li {
+								display:block;
+								margin:0px;
+								position: relative;
+
+								a {
+									padding: 5px 15px;
+									border: none;
+									font-weight: lighter;
+									color:#333;
+									
+									i {
+										float: right;
+										margin: 0 0 0 15px;
+										padding: 4px 0;
+									}
+
+									&:hover {
+										background:#333;
+										color:#fff;
+									}
+								}
+								&:hover {
+									.sub {
+										display:block;
+
+										li:hover a{
+											background: #3f3f3f;
+										}
+									}
+								}
+								.sub {								
+									box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 -1px 0px rgba(0, 0, 0, 0.02);
+									background:#333;
+									display: none;
+									position: absolute;
+									top: 0;
+									left: 100%;
+									width: 220px;				
+
+									&:after {
+										display:none;
+									}
+
+
+									li {
+										a {
+											font-size: 12px !important;
+											color:#fff;
+										}		
+										ul {
+											box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 -1px 0px rgba(0, 0, 0, 0.02);
+											background: #3f3f3f;
+											display: none;
+											position: absolute;
+											top: 0;
+											left: 100%;
+											width: 175px;
+
+
+											&:after {
+												display:none;
+											}
+										}							
+										&:hover {
+											ul {
+												display:block;
+												li {
+													&:hover a {
+														background:#454545;
+													}
+												}
+											}
+										}								
+									}
+
+								}
+							}
+
+							&:after {
+								bottom: 100%;
+								left: 40px;
+								border: solid transparent;
+								content: " ";
+								height: 0;
+								width: 0;
+								position: absolute;
+								pointer-events: none;
+								border-color: rgba(136, 183, 213, 0);
+								border-bottom-color: #fff;
+								border-width: 5px;
+								margin-left: -5px;
+							}
+						}
+
+						&:hover {
+
+							ul {
+								display: block;
+							}
+						}
+						&.active {
+							a {
+								border-color: $white;
+							}
+						}
+					}
+				}
+			
+				&.account {
+					@include font-size(13px);
+					float: right;
+					font-weight: 500;
+					text-transform: uppercase;
+					letter-spacing: 1px;
+					line-height: 20px;
+
+					li {
+						margin: 0px;
+						display: inline-block;
+
+						.login {
+							margin-right: 15px;
+						}
+						
+						.sign-up {
+							@include border-radius(4px);
+							border: 2px solid $white;
+							margin-top: -2px;
+							padding: 7px 24px 8px;
+
+							&:hover {
+								background: $white;
+								color: $gray-dark;
+							}
+						}
+						a {
+							color: $white;
+						}
+					}
+				}
+			}		
+	}
+
+	&.admin {
+		
+			display:flex;
+			justify-content: space-between;
+			padding :0px;
+			background-color: #fff;
+	
+				nav {
+					list-style: none;
+	
+	
+					&.main {
+						li {
+							&.active {
+								position: relative;
+	
+								&:after {
+									position: absolute;
+									content: "";
+									bottom: 0;
+									right: 18px;
+									left: 18px;
+									border-bottom: 3px solid #d0d0d0;
+								}									
+							}
+						}
+					}
+	
+					&.user {
+						align-self: flex-end;
+	
+						> li {
+	
+							a {
+								color: #484848;
+								vertical-align: top;
+								-ms-transition: all 0.29s ease-in-out 0s;
+								transition: all 0.29s ease-in-out 0s;
+								position: relative;
+	
+							}	
+						}
+					}
+	
+					&.user {
+						.profile {
+	
+						.profile-content {
+								> * {
+									display: inline-block;
+								}
+	
+								img {
+									@include border-radius(3px);
+									width: 30px;
+									position: relative;
+									height: 30px;
+									vertical-align: middle;
+									background-size: 30px;
+									top: -3px;
+								}
+	
+								.account-name {
+									overflow: hidden;
+									text-overflow: ellipsis;
+									white-space: nowrap;
+									max-width: 180px;
+									line-height: 18px;
+									margin-left: 12px;
+									vertical-align: middle;
+									position: relative;
+									top: -3px;
+	
+									.name {
+										display: block;
+										font-weight: 700;
+									}
+								}
+	
+								i {
+									margin-left: 8px;
+								}
+						}	
+						
+						.dropdown-menu {
+							@include border-radius(0px);
+							box-shadow: none;
+							margin: 0px;
+							padding: 0px;
+							width: 267px;
+							background:#333;
+	
+							li {
+								display: block;
+	
+								&:last-child {
+									border:none;
+								}
+								
+								a {
+									color: #bbb;
+									padding: 10px;
+	
+									i {
+										float: right;
+									}
+								}
+								&.active, &:hover {
+									a {
+										color: #fff;
+										background:#444;
+									}
+								}
+							}
+						}
+					}						
+				}
+	
+					> li {
+						@include font-size(14px);
+						color: #484848;
+						outline: none;					
+						transition: all 0.29s ease-in-out 0s;
+						float:left;
+						line-height: 55px;
+						padding: 0 19px;
+						font-weight: 600;
+						cursor: pointer;
+	
+						&:hover {
+							background:#fafafa;
+						}
+	
+	
+						&.search {
+							img {
+								display: inline-block;
+								vertical-align: middle;
+							}
+						}
+	
+						&.logo {
+	
+							img {
+								width: 30px;
+								vertical-align: middle;
+								margin-top: -5px;
+							}
+						}
+	
+	
+					
+					}
+				}
+	}
+
+	&.other {
+		background:#fff;
+		padding: 0;
+
+		.container {
+			width: inherit;
+			padding: 0px;
+		}
+
+		.arrange_unit.logo.logo {
+			text-align: center;
+			background:#333;
+
+			a {
+				height: 18px;
+				display: block;
+			}
+		}
+
+		nav.header-nav {
+			padding-left: 20px;
+
+			> li {
+
+				a {
+					padding: 15px 12px;
+					border-bottom: none;
+					color:#333;
+				}
+
+				> ul {
+					background: #fafafa;
+					border: 1px solid #ddd;
+					box-shadow: none;
+
+					&:after {
+						border-bottom-color: #fafafa;
+					}
+
+					&:before {
+						border: solid transparent;
+						border-color: #fff;
+						border-bottom-color: #ddd;
+						border-width: 6px;
+						margin-left: -6px;
+						bottom: 100%;
+						left: 40px;
+						content: " ";
+						height: 0;
+						width: 0;
+						position: absolute;
+						pointer-events: none;
+					}
+
+					 ul {
+						 box-shadow: none !important;
+					 }
+				}
+			}
+		}
+
+		nav.account li {
+			a {
+				color:#333;
+			}
+
+			.sign-up {
+				border-color: #333;
+				background:#333;
+				color:#fff;
+
+				&:hover {
+					color:#fff;
+					background:#555;
+					border-color: #444;
+				}
+			}
+		}
+		.user-nav {
+			padding-right: 40px;
+
+			.cart .items {
+				color:#333;
+			}
+
+			.dropdown-menu {
+				background:#333;
+				box-shadow: none;
+				border: none;
+
+				&:after {
+					display: none;
+				}
+
+				a {
+					color:#aaa;
+
+					&:hover {
+						color:#fff;
+						background:#444;
+					}
+				}
+			}
+		}
+	}
+}

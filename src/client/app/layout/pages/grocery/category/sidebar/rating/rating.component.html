@@ -1,0 +1,7 @@
+<ol class="star-list">
+  <li *ngFor="let star of stars, let i = index;">
+    <input type="checkbox" [name]="[i]" (click)="changeFilterStatus(filter)">
+    <div class="rating" [ngStyle]="{ 'width': +filter.rating}"></div>
+    <span class="count">({{ star.length }})</span>
+  </li>
+</ol>

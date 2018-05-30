@@ -1,0 +1,186 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+
+//  BEM - Block Element Modifier
+//  This is how our code is structured. Please follow this layout and format.
+//  More Info: https://css-tricks.com/bem-101/
+//
+//  .steps {
+//	    &__item {		
+//		    &--first {}
+//		    &--last {}
+//		    &--active {}
+//		    &--done {}
+//	    }
+//	    &__link {}
+//  }
+
+.app-viewer {
+	height: 370px;
+	background-image: url('/assets/img/header.jpg');
+	background-color: #333;
+  background-size: 100%;
+	background-position: 50%;
+
+	.search {
+		display: table;
+		height: 100%;
+		margin: 0px auto;
+
+		.search-wrapper {
+			display: table-cell;
+			vertical-align: middle;
+			width: 60%;
+		}
+	}
+}
+
+.popular, .searched, .category {
+	margin-top: 80px;
+
+	h3 {
+		@include font-size(16px);
+		font-family: 'Permanent Marker', sans-serif;
+		text-transform: uppercase;
+		font-weight: bold;
+		letter-spacing: 1px;
+		margin: 0 0 60px 0;
+	}
+}
+
+.category {
+
+	.list {
+		display: flex;
+		flex-flow: row wrap;
+
+		li {
+			text-align: center;
+			flex: 0 1 calc(14.66%);
+			margin: 0 1% 30px;	
+			
+			a {
+				display:block; 
+
+				img {
+					@include border-radius(100%);
+					margin-bottom: 20px;
+					object-fit: cover;
+					width: 150px;	
+					height: 150px;
+				}
+
+				h4 {
+					@include font-size(14px);
+					letter-spacing: .5px;
+					margin: 0px;
+					color:#222;
+				}
+
+				&:hover {
+
+					h4 {
+						color:green;
+					}
+				}
+			}
+		}
+	}
+}
+
+.cta {
+	padding: 0 0 40px 0;
+	margin-top: 60px;
+
+	.box {
+
+		h4 {
+			margin: 0 0 10px 0;
+			font-weight: 500;
+		}
+
+		p {
+			@include font-size(14px);
+		}
+	}
+
+	.coupons {
+		background:#d32323;
+		outline: 1px dashed #fff;
+		outline-offset: -15px;
+
+		a {
+		
+			color:#fff;
+		}
+	}
+
+	.coupons, .recipes {
+
+		a {
+			padding: 60px 20px;
+			margin: 0 20px;
+			display: block;			
+			
+			h4 {
+				font-family: 'Permanent Marker', sans-serif;
+			}
+		}
+	}
+
+	.recipes {
+
+		a {
+			background-image: url('/assets/img/recipe.jpg');
+			background-repeat: no-repeat;	
+			padding: 30px 20px;
+
+			.background {
+				@include opacity(.9);
+				background: #fff;
+				padding: 30px 0;
+				color: #333;
+			}
+		}
+	}
+
+	.blog {
+
+		a {
+			background:#fff;
+			display: block;
+			border: 1px solid #eee;
+			color:#333;
+
+			img, .holder {
+				display:inline-block;
+				vertical-align: middle;
+			}
+
+			img {
+				object-fit: cover;
+				width: 160px;
+				height: 160px;
+			}
+
+			.holder {
+				margin-left: 20px;
+
+				small {
+					font-family: 'Permanent Marker', sans-serif;
+					@include font-size(10px);					
+					text-transform: uppercase;
+					font-weight: bold;
+					margin-bottom:5px;
+					color:#d32323;
+					display:block;
+				}
+
+				p {
+					color:#666;
+				}
+			}
+		}
+	}
+}

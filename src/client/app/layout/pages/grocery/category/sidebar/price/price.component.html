@@ -1,0 +1,19 @@
+<ol class="price-list" [class.overflow]="prices.length > 8">
+  <li *ngFor="let price of prices, let i = index;">
+    <input type="checkbox" [name]="[i]" (click)="changeFilterStatus(filter)">
+    <span class="count">({{ pricefunction(i) }})</span>
+    <span class="count">({{ price.length }})</span>
+  </li>
+</ol>
+
+<form [formGroup]="price" class="range">
+  <input min="0" type="number" formControlName="from" />
+  <span>to</span>
+  <input min="1" type="number" [max]="['max']" formControlName="to" />
+  <button type="submit" class="btn" [disabled]="!price.valid" (click)="submit(price.controls.from.value, price.controls.to.value)">
+    <span [class.hidden]="submit == true">Go</span>
+    <span [class.hidden]="submit != true" class="spinner">
+      <img src="/assets/svg/three-dots.svg" width="35" alt="" />
+    </span>
+  </button>
+</form>

@@ -1,0 +1,7 @@
+<ol class="offer-list" [class.overflow]="offers.length > 15">
+    <li *ngFor="let offer of offers, let i = index;">
+      <input type="checkbox" [name]="[i]" (click)="changeFilterStatus(filter)">
+      <span class="count">({{ offer.name }})</span>
+      <span class="count">({{ offer.length }})</span>
+    </li>
+  </ol>

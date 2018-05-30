@@ -1,0 +1,58 @@
+<nav class="header-nav">
+	<li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a class="dropdown" [routerLink]="['/groceries']" >Groceries</a>
+		<ul>
+			<li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" *ngFor="let a of lists">
+				<a [routerLink]="['/groceries/', url(a)]">{{a.name}}  <i *ngIf="a.category !== ''" class="fa fa-angle-right"></i></a>
+
+				<ul class="sub" *ngIf="a.category">
+					<li *ngFor="let b of a.category">
+							<a [routerLink]="['/groceries/', url(a), url(b)]">{{b.name}} <i *ngIf="b.sub" class="fa fa-angle-right"></i></a>
+
+							<ul *ngIf="b.sub">
+									<li *ngFor="let c of b.sub">
+											<a [routerLink]="['/groceries/', url(a), url(b), url(c)]">{{c.name}}</a>
+										</li>
+								</ul>
+						</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a class="dropdown" [routerLink]="['/recipes']">Recipes</a>
+		<ul>
+			<li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/recipes/seasonal']">Seasonal Collections  <i class="fa fa-angle-right"></i></a>
+				<ul class="sub" >
+						<li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/recipes/seasonal/spring-breakfast-brunch']">Spring Breakfast & Brunch</a></li>
+						<li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/recipes/seasonal/weekly-favorites']">Weekly Top 5 Favorites</a></li>
+						<li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/recipes/seasonal/mothers-day']">Mother's Day Recipes</a></li>
+						<li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/recipes/seasonal/spring']">Spring Recipes</a></li>												
+						<li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/recipes/seasonal/20-minute']">20 Minute Meals</a></li>
+						<li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/recipes/seasonal/healthy-breakfast']">Healthy Breakfast Ideas</a></li>
+						<li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/recipes/seasonal/gluten-free']">Gluten Free</a></li>
+						<li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/recipes/seasonal/sides-salads']">Sides & Salads</a></li>												
+						<li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/recipes/seasonal/low-carb']">Low Carb</a></li>
+						<li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/recipes/seasonal/vegan']">Vegan</a></li>												
+						<li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/recipes/seasonal/']">More Collections</a></li>												
+				</ul>
+			</li>
+			<li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/recipes/course']">Recipes by Course  <i class="fa fa-angle-right"></i></a>
+				<ul class="sub" >
+						<li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/recipes/course/appetizers']">Appetizers</a></li>
+						<li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/recipes/course/bread']">Bread</a></li>
+						<li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/recipes/course/breakfast-bunch']">Breakfast, Brunch</a></li>
+						<li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/recipes/course/desserts']">Desserts</a></li>												
+						<li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/recipes/course/drinks']">Drinks</a></li>
+						<li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/recipes/course/main-dishes']">Main Dishes</a></li>
+						<li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/recipes/course/salad']">Salad</a></li>
+						<li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/recipes/course/side-dishes']">Side Dishes</a></li>												
+						<li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/recipes/course/soups-stews-chili']">Soups, Stews, and Chili</a></li>
+						<li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/recipes/course/marinades-sauces']">Marinades & Sauces</a></li>												
+				</ul>
+			</li>	
+			<li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/recipes/menus']">Menu Ideas</a></li>			
+			<li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/recipes/planner']">Meal Planner</a></li>
+			<li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/recipes/left-overs']">Use up Left Overs</a></li>
+		</ul>
+	</li>
+	<li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/coupons']">Coupons</a></li>
+</nav>

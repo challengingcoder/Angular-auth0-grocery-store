@@ -1,0 +1,91 @@
+<section class="app-viewer">
+	<header-app></header-app>
+	
+	<search></search>
+</section>
+
+	<section class="container popular">
+		<h3 class="text-center">Popular Foods</h3>
+	
+		<slider>
+			<ng-container *ngFor="let i of popular;">
+				<article class="item">
+					<img [src]="" />
+					<h3>{{item.title}}</h3>
+				</article>
+			</ng-container>
+		</slider>
+	</section>
+
+	<section class="container searched">
+		<h3 class="text-center">Most Searched Items</h3>
+			
+		<slider>
+			<ng-container *ngFor="let i of searched;">
+				<article class="item">
+					<img [src]="" />
+					<h3>{{item.title}}</h3>
+				</article>
+			</ng-container>
+		</slider>
+	</section>
+	
+	<!-- <section class="container">
+		<h3 class="text-center">Speciality Cookbooks</h3>
+		
+		<div class="row">
+			<div class="col col-md-4">
+						
+			</div>
+			<div class="col col-md-4">
+						
+			</div>	
+			<div class="col col-md-4">
+						
+			</div>
+		</div>
+	</section> -->
+
+	<section class="container category">
+		<h3 class="text-center">Foods By Category</h3>
+
+		<ul class="list">
+			<li *ngFor="let i of category;">
+				<a [routerLink]="['/groceries/', url(i)]">
+					<img [alt]="i.name" [src]="i.img" />
+					<h4>{{i.name}}</h4>
+				</a>
+			</li>
+		</ul>
+	</section>
+
+	<section class="cta">
+		<div class="container">
+			<div class="col col-md-4 coupons text-center">
+				<a class="box" [routerLink]="['/coupons/']">
+					<h4>Find Coupons</h4>
+					<p>See online coupon related purchases.</p>
+				</a>
+			</div>
+			<div class="col col-md-4 recipes text-center">
+				<a class="box" [routerLink]="['/recipes/']">
+					<div class="background">
+						<h4>Find Recipes</h4>
+						<p>See popular recipes to make.</p>						
+					</div>
+				</a>
+			</div>
+			<div class="col col-md-4 blog">
+				<a class="box" [routerLink]="['/blog/']">
+					<img src="/assets/img/food.jpeg" />
+					<div class="holder">
+						<small>Latest Post</small>
+						<h4>This is an example</h4>
+						<p>See what's new in the kitchen.</p>
+					</div>
+				</a>
+			</div>
+		</div>
+	</section>
+
+

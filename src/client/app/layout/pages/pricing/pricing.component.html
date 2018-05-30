@@ -1,0 +1,177 @@
+<section class="bg">
+  <div class="overlay"></div>
+
+  <div class="content">
+    <header-app></header-app>
+
+    <div class="container text-center">
+      <h1>Select a Plan</h1>
+
+      <div class="row pricing">
+        <div class="col col-md-4">
+          <div class="price">
+            <small>Free</small>
+            <article>
+              <sup>$</sup>
+              <h4>0</h4>
+            </article>
+            <ul>
+              <li><img src="/assets/svg/arrow-circle.svg" /> Includes Ads</li>
+              <li><img src="/assets/svg/arrow-circle.svg" /> No Product Pricing</li>
+              <li><img src="/assets/svg/arrow-circle.svg" /> No Search History</li>
+              <li><img src="/assets/svg/arrow-circle.svg" /> Save up to 100 Products</li>
+              <li><img src="/assets/svg/arrow-circle.svg" /> Save up to 50 Recipes</li>
+              <li><img src="/assets/svg/arrow-circle.svg" /> No Product Comparison</li>
+              <li><img src="/assets/svg/arrow-circle.svg" /> No Meal Planner</li>
+              <li><img src="/assets/svg/arrow-circle.svg" /> No Search by UPC, ISBN, Barcode</li>
+            </ul>
+            <button class="btn" [routerLink]="['/sign-up']">Continue</button>
+          </div>
+        </div>
+        <div class="col col-md-4">
+          <div class="price featured">
+            <small>Yearly</small>
+            <article>
+              <sup>$</sup>
+              <h4>19.99</h4>
+            </article>
+            <ul>
+              <li><img src="/assets/svg/arrow-circle.svg" /> No Ads</li>
+              <li><img src="/assets/svg/arrow-circle.svg" /> View Pricing on all Products</li>
+              <li><img src="/assets/svg/arrow-circle.svg" /> Unlimited Search History</li>
+              <li><img src="/assets/svg/arrow-circle.svg" /> Save Unlimited Products</li>
+              <li><img src="/assets/svg/arrow-circle.svg" /> Save Unlimited Recipes</li>
+              <li><img src="/assets/svg/arrow-circle.svg" /> Unlimited Product Comparison</li>
+              <li><img src="/assets/svg/arrow-circle.svg" /> Unlimited Meal Planner History</li>
+              <li><img src="/assets/svg/arrow-circle.svg" /> Search by UPC, ISBN, Barcode</li>
+            </ul>
+            <button class="btn" [routerLink]="['/sign-up/yearly']">Select Plan</button>
+          </div>
+        </div>
+        <div class="col col-md-4">
+          <div class="price">
+            <small>Monthly</small>
+            <article>
+              <sup>$</sup>
+              <h4>1.99</h4>
+            </article>
+            <ul>
+              <li><img src="/assets/svg/arrow-circle.svg" /> No Ads</li>
+              <li><img src="/assets/svg/arrow-circle.svg" /> View Pricing on 40 Products a Month</li>
+              <li><img src="/assets/svg/arrow-circle.svg" /> Limited Search History</li>
+              <li><img src="/assets/svg/arrow-circle.svg" /> Save 10,000 Products</li>
+              <li><img src="/assets/svg/arrow-circle.svg" /> Save 5000 Recipes</li>
+              <li><img src="/assets/svg/arrow-circle.svg" /> 40 Product Comparisons a Month</li>
+              <li><img src="/assets/svg/arrow-circle.svg" /> 6 Months of Meal Planner History</li>
+              <li><img src="/assets/svg/arrow-circle.svg" /> No Search by UPC, ISBN, Barcode</li>
+            </ul>
+            <button class="btn" [routerLink]="['/sign-up/monthly']">Select Plan</button>
+          </div>
+        </div>
+      </div>
+      <p>No obligations, cancel anytime. 15 day free-trial for all pay subscriptions.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container features">
+    <h2 class="text-center">Included with all Plans:</h2>
+
+    <div class="row">
+      <div class="col col-md-4">
+        <p>
+          <img src="/assets/svg/check-circle.svg" /> Shop over 140,000+ food products.</p>
+        <p>
+          <img src="/assets/svg/check-circle.svg" /> Discover 500,000+ recipes.</p>
+        <p>
+          <img src="/assets/svg/check-circle.svg" /> Get notifications on product rec, recipes, etc.</p>
+      </div>
+      <div class="col col-md-4">
+        <p>
+          <img src="/assets/svg/check-circle.svg" /> Find and compare your favorite food brands.</p>
+        <p>
+          <img src="/assets/svg/check-circle.svg" /> See nutritional info on all products.</p>
+        <p>
+          <img src="/assets/svg/check-circle.svg" /> Customized recipes based on your lists & search history.</p>
+      </div>
+      <div class="col col-md-4">
+        <p>
+          <img src="/assets/svg/check-circle.svg" /> Search products based on different criteria.</p>
+        <p>
+          <img src="/assets/svg/check-circle.svg" /> Review coupons from your grocery list.</p>
+        <p>
+          <img src="/assets/svg/check-circle.svg" /> Find recipes on your left over foods.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container faq">
+      <h2 class="text-center">FAQ</h2>
+
+      <div class="row">
+        <div class="col col-md-4">
+          <ul>
+            <li>
+              <strong>If I switch from yearly to monthly, do I lose any data?</strong>
+              <p>No, you do not lose any data, we restrict what data you can access based on your plan.</p>
+            </li>
+            <li>
+              <strong>Do you offer refunds if I want to cancel?</strong>
+              <p>No, all charges are final. This prevent users from abusing the service by spamming accounts. </p>
+            </li>
+            <li>
+              <strong>What nutritional information do you provide?</strong>
+              <p>We provide product nutrition to help your decisions when shopping. Set limits on your diet by viewing
+                personalized results and recommendations to stay on track.</p>
+            </li>
+            <li>
+              <strong>Can I customize the types of notifications I get?</strong>
+              <p>Yes, in your dashboard portal you will be able to choose what types of notifications and the frequency. 
+                If you decide on selecting a few or deciding not to have any you do that too.</p>
+            </li>
+          </ul>
+        </div>
+        <div class="col col-md-4">
+          <ul>
+            <li>
+              <strong>Do you provide a free trial with all paid plans?</strong>
+              <p>All paid plans have a 15-day trial with no obligation, risk free and automated. No humans required.</p>
+            </li>
+            <li>
+              <strong>How accurate is your product data?</strong>
+              <p>All our data is the most accurate information you can find online today, we search for all online vendors that sell products you're
+                interested in. All in one place, convienence at your fingertips.</p>
+            </li>
+            <li>
+              <strong>What is your meal planner?</strong>
+              <p>This is for scheduling meals in an easy to use calendar for breakfast, lunch, and dinner. We automate the process by saving a recipe
+                you would like to cook and when.</p>
+            </li>
+            <li>
+              <strong>What types of coupons do you have?</strong>
+              <p>We offer coupons and discount for online retailers based on the products you add to your grocery list. Providing the best price
+              with additional savings.</p>
+            </li>
+          </ul>
+        </div>
+        <div class="col col-md-4">
+          <ul>
+            <li>
+              <strong>If I don't like the service am I charged a cancellation fee?</strong>
+              <p>No, there is no cancellation fee. Everything is automated, and accessible to put on hold or cancel on your dashboard. </p>
+            </li>
+            <li>
+              <strong>How do you recommend products, recipe's, and coupons?</strong>
+              <p>We use all your searches, favorites, saves, etc. to give you recommendations that your are probably interested in.</p>
+            </li>
+            <li>
+              <strong>What does your product comparison do?</strong>
+              <p>This allows you to compare multiple products on every detail from pricing, to nutrition data, rating, etc. This helps your decision 
+                making when looking for differences between similiar food types.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+  </div>
+</section>  

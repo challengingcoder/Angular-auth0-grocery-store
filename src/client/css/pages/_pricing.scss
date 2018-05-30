@@ -1,0 +1,212 @@
+pricing {
+
+  .bg {
+    margin: 0 0 40px 0;
+    background-image: url('/assets/img/login_bg.jpg');
+    background-color: #333;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 0 0 80px;
+    position: relative;
+    
+    .overlay {
+      background-color: rgba(255, 255, 255, 0.6);
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index:0;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+
+      header {
+        margin-bottom: 80px;
+
+        .cart .items, nav.header-nav > li > a, nav.account li a {
+          color: #333 !important;
+        }
+
+        nav.header-nav li a:hover {
+          border-bottom-color: #333;
+        }
+      }
+
+      h1 {
+        font-family: 'Permanent Marker', sans-serif;
+        margin: 0 0 60px;
+        position: relative;
+
+        &:after {
+          content: '';
+          border-bottom: 2px solid #bbb;
+          display: block;
+          position: absolute;
+          left: 50%;
+          margin-top: 15px;
+          margin-left: -10px;
+          width: 20px;
+        }
+      }
+
+      p {
+        @include font-size(14px);
+        font-weight: bold;
+        color: #333;
+        font-style: italic;
+      }
+
+      .pricing {
+        max-width: 1000px;
+        margin: 0 auto 40px;
+
+        .price {
+          box-shadow: 0 1px 3px rgba(46, 59, 125, 0.23);
+          background: #fff;
+          display: grid;
+
+          &.featured {
+            margin: -15px -15px 0 -15px;
+
+            small {
+              color: $green;
+            }
+
+            .btn {
+              padding: 20px;
+
+              &:hover {
+                background: $green;
+              }
+            }
+          }
+
+          small {
+            @include font-size(12px);
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            display: block;
+            margin: 20px 0 10px;
+          }
+          
+          article {
+            position: relative;
+            display: table;
+            margin: 0px auto;
+
+            > * {
+              display: table-cell;
+            }
+
+            h4 {
+              @include font-size(55px);
+              font-family: 'Permanent Marker', sans-serif;
+              margin: 0px;
+            }
+            sup {
+              @include font-size(18px);
+              font-family: 'Permanent Marker', sans-serif;
+              position: absolute;
+              left: -10px;
+              top: 20px;
+            }
+          }
+
+          ul {
+            padding: 20px;
+            color:#666;
+
+            li {
+              @include font-size(13px);
+              margin-bottom: 5px;
+              text-align: left;
+
+              img {
+                width: 20px;
+                height: 20px;
+                display:inline-block;
+                margin-right: 5px;
+                position: relative;
+                top: 4px;
+                }          
+              }
+          }
+
+          .btn {
+            @include border-radius(0px);
+            border: none;
+            background:#333;
+            padding: 5px;
+            color:#fff;
+
+            &:hover {
+              background:#444;
+            }
+          }
+        }
+      }
+    }
+  }
+    
+  .features, .faq {
+    padding: 50px 0;
+    
+    h2 {
+      margin: 0 0 60px 0;
+      font-family: 'Permanent Marker', sans-serif;
+      position: relative;
+
+      &:after {
+        content: '';
+        border-bottom: 1px solid #bbb;
+        display: block;
+        position: absolute;
+        left: 50%;
+        margin-top: 20px;
+        margin-left: -5px;
+        width: 10px;
+      }
+    }
+  }
+
+
+  .features {
+
+    p {
+      color:#555;
+      margin-bottom: 10px;
+
+      img {
+        width: 22px;
+        height: 22px;
+        display: inline-block;
+        margin-right: 10px;
+        position: relative;
+        top: 5px;
+      }
+    }
+  }
+
+  .faq {
+    
+    li {
+      margin-bottom: 40px;
+
+      strong {
+        @include font-size(16px);
+        margin-bottom: 10px;
+        display: block;
+      }
+
+      p {
+        line-height: 20px;
+        @include font-size(14px);
+      }    
+    }
+  }
+  
+}

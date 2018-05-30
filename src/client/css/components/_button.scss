@@ -1,0 +1,56 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+
+//  BEM - Block Element Modifier
+//  This is how our code is structured. Please follow this layout and format.
+//  More Info: https://css-tricks.com/bem-101/
+//
+//  .steps {
+//	    &__item {		
+//		    &--first {}
+//		    &--last {}
+//		    &--active {}
+//		    &--done {}
+//	    }
+//	    &__link {}
+//  }
+
+	.btn {
+		@include border-radius(3px);
+		@include font-size(17px);
+		background: #e7e9ec;
+    font-weight: 600;
+    text-align: center;
+    vertical-align: middle;
+    text-transform: capitalize;
+    user-select: none;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 0 18px;
+    border: 0 none;
+    display: inline-block;
+    line-height: 49px;
+		width: 100%;
+
+		&:hover,
+		&:focus,
+		&:active {
+			background: #e7e9ec;
+		}
+	}
+
+	.btn-primary {
+		background: $green;
+
+		&:hover,
+		&:active,
+		&:focus {
+			background: $green;
+		}
+	}
+	
+	.btn.disabled, .btn[disabled], fieldset[disabled] .btn {
+    @include opacity(.25);
+		pointer-events: none;
+	}

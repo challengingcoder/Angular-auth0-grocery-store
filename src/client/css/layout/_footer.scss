@@ -1,0 +1,141 @@
+footer {
+  &.reg {
+  padding: 50px 0;
+  color: #999;
+  line-height: 22px;
+
+  .container {
+    border-top: 1px solid #ddd;
+    padding-top:50px;
+  }
+
+  h4 {
+    @include font-size(14px);
+    font-family: 'Permanent Marker', sans-serif;
+    font-weight: bold;
+    color:#333;
+    text-transform: uppercase;
+    margin-top: 0px;
+    letter-spacing: 1px;
+  }
+
+  nav {
+    li {
+      @include font-size(14px);
+      margin-bottom: 5px;
+      
+      a {
+        color:#777;
+
+        &:visited {
+          color: #777;
+        }
+
+        &:hover {
+          color:#333;
+          text-decoration: underline;
+        }
+      }
+
+      &.active {
+        a {
+          color:#333;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &.social {
+      margin-bottom: 10px;
+      display:table;
+
+      li {
+        list-style: none;
+        display:inline-table;
+        margin: 0 25px 0 0;
+
+        &.fb {
+          &:hover {
+            a {
+              color:#3c5898;
+            }
+          }
+        }
+
+        &.tw {
+          &:hover {
+            a {
+              color:#1b95e0;
+            }
+          }
+        }
+
+        &.ig {
+          &:hover {
+            a {
+              color:#dd2a7b;
+            }
+          }
+        }
+
+        &.pi {
+          &:hover {
+            a {
+              color:#bd081c;
+            }
+          }
+        }
+
+        a {
+          @include font-size(24px);
+          color: #333;
+
+          &:visited {
+            color: #333;
+          }
+        }
+      }
+    }
+  }
+
+  .menu {
+    float:right;
+  }
+
+  p {
+    @include font-size(12px);
+    margin-bottom: 20px;
+    color: #777;
+    line-height: 20px;
+  }
+
+  .logo {
+    width: 25px;
+    margin-bottom: 20px;
+  }
+
+  small {
+    @include font-size(11px);
+    font-family: 'Permanent Marker', sans-serif;
+    line-height: 18px;
+    color: #444;
+    display:block;
+  }
+  }
+
+  &.admin {
+    margin: 36px 0;
+
+    .logo {
+      width: 125px;
+      margin: 0 auto 20px;
+      display: block;
+    }
+
+    p {
+      @include font-size(13px);
+      text-align: center;
+      color:#888;
+    }
+  }
+}

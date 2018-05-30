@@ -1,0 +1,36 @@
+/**
+ * Basic typography style for copy text
+ */
+
+textarea, 
+input, 
+button { 
+	 outline: none; 
+}
+
+label {
+	color: #484848;
+    font-weight: 600;
+    display: block;
+    max-width: 635px;
+    padding-bottom: .8em;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+textarea, input[type="text"], input[type="password"], input[type="file"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .faux-file {
+	display: inline-block;
+	padding: 0 .4em 0 .4em;
+	margin-bottom: 2em;
+	vertical-align: middle;
+	border-radius: 3px;
+	min-width: 50px;
+	max-width: 635px;
+	width: 100%;
+	min-height: 32px;
+	background-color: #ffffff;
+	border: 2px solid #d0d0d0;
+	margin: 0 0 24px 0;
+}

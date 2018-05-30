@@ -1,0 +1,89 @@
+<header *ngIf="!isUser(router.url)" class="main" [class.other]="other" >
+		<div class="container">
+					
+			<div class="nowrap arrange">
+			
+				<div class="arrange_unit middle logo" >
+					<a [routerLink]="['/']" [class.signin]="router.url === '/login' || router.url === '/sign-up'" >
+						<img src="./assets/svg/logo.svg" />
+					</a>
+				</div>
+
+				<nav-app  class="arrange_unit"></nav-app>
+				<div class="arrange_unit middle user-nav">
+					<aside class="arrange middle">
+						<section class="arrange_unit middle" *ngIf="login()">
+							<a class="notification glyphicon glyphicon-bell"></a>
+							<div class="btn-group" *ngIf="load" dropdown>
+								<img *ngIf="profile.picture" class="user img" [src]="photoURL(profile.picture)" dropdownToggle /> 
+								<span *ngIf="!profile.picture" class="user name" dropdownToggle> {{ profile.name }} </span>
+								<i class="fa fa-angle-down"></i>										
+								<ul *dropdownMenu class="dropdown-menu dropdown-menu-right" role="menu">
+									<li role="menuitem" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a class="dropdown-item" [routerLink]="['/user']">Dashboard</a></li>
+									<li role="menuitem" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a class="dropdown-item" [routerLink]="['/user/favorites']">Favorites</a></li>
+									<li role="menuitem" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a class="dropdown-item" [routerLink]="['/user/history']">History</a></li>	
+									<li role="menuitem" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a class="dropdown-item" [routerLink]="['/user/settings']">Settings</a></li>
+									<li role="menuitem"><a class="dropdown-item" (click)="logOut()">Sign Out</a></li>
+								</ul>
+					
+							</div>
+
+						</section>
+								<nav class="account arrange_unit" *ngIf= "!login()">
+									<li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" ><a class="login" [routerLink]="['/login']" >Log In</a></li>
+									<li *ngIf= "router.url !== '/pricing' && router.url !== '/sign-up'"  [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" ><a class="sign-up" [routerLink]="['/pricing']" >Sign Up</a></li>
+								</nav>
+								<div class="arrange_unit middle cart">
+									<shopping-cart></shopping-cart>
+								</div>
+
+					</aside>					
+				</div>
+
+			</div>
+		</div>	
+</header>
+
+<header *ngIf="isUser(router.url)" class="admin">
+		<nav class="main">
+			<li class="logo"><a [routerLink]="['/']"><img src="./assets/svg/cart.svg"/></a></li>
+			<li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" [routerLink]="['/user/favorites']">Favorites</li>
+			<li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" [routerLink]="['/user/history']">History</li>
+			<li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" [routerLink]="['/user/lists']">Lists</li>
+			<li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" [routerLink]="['/user/reports']">Reports</li>
+		</nav>
+	
+	
+		<nav class="user">
+				<li class="btn-group profile" dropdown>
+					<div class="profile-content" *ngIf="load" dropdownToggle>
+						<img  class="user img" [src]="photoURL(profile.picture)"/> 
+						<div class="account-name">
+							<span class="name"> {{ profile.nickname }} </span>
+							<span > {{ profile.name }} </span>
+						</div>	
+						<span class="sr-only">Toggle Dropdown</span>
+						<i class="fa fa-angle-down"></i>	
+					</div>
+						
+						<ul *dropdownMenu class="dropdown-menu dropdown-menu-right" role="menu">
+							<li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+								<a (click)="notifications()">Notifications <i class="fa fa-angle-right"></i></a>
+								<div class="notifications">
+	
+								</div>
+							</li>
+							<li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/user/']">Dashboard</a></li>						
+							<li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/user/settings']">Settings</a></li>
+							<li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/user/support']">Support</a></li>						
+							<li role="menuitem"><a class="dropdown-item" (click)="logOut()">Log Out</a></li>
+						</ul>
+					</li>
+					<li class="help" (click)="help()">
+						Help
+					</li>
+					<li class="search">
+						<img src="./assets/svg/search.svg"  (click)="search()"/>
+					</li>
+				</nav>
+	</header>

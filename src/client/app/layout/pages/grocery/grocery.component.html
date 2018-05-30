@@ -1,0 +1,36 @@
+<div class="bg">
+  <div class="overlay"></div>
+  <div class="content">
+    <header-app></header-app>
+    <div class="container">
+      <h1>Search over +140,000 groceries!</h1>
+      <h3>The largest directory of branded food products available online.</h3>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <section class="categories" *ngFor="let a of lists">
+  
+    <a class="header" [routerLink]="['/groceries/', url(a)]"> <img [src]="['/assets/svg/cat/' + url(a) + '.svg']"/> <h2>{{a.name}}</h2></a>
+    
+    <div class="row">
+      <article class="cat" *ngFor="let b of a.category">
+        
+        <a *ngIf="!b.sub" [routerLink]="['/groceries/', url(a), url(b)]"><h3>{{b.name}}</h3></a>
+
+        <ul class="dropdown" *ngIf="b.sub">
+          <li>
+            <a [routerLink]="['/groceries/', url(a), url(b)]"><h3>{{b.name}} <i class="fa fa-angle-down"></i></h3></a>
+        
+            <ul class="sub" *ngIf="b.sub">
+              <li *ngFor="let c of b.sub"><a [routerLink]="['/groceries/', url(a), url(b), url(c)]">{{ c.name }}</a></li>
+            </ul>            
+          </li>
+        </ul>
+      </article>      
+    </div>
+
+  </section>
+</div>
+

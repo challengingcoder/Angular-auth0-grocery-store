@@ -1,0 +1,30 @@
+<section >
+    <h4 (click)="toggle[1] = !toggle[1]">Category <i class="fa" [ngClass]="toggle[1] ? 'fa-angle-up': 'fa-angle-down'" aria-hidden="true"></i></h4>
+    <div *ngIf="!toggle[1]">
+      <category></category>
+    </div>
+  </section>
+  <section>
+    <h4 (click)="toggle[2] = !toggle[2]">Current Offers <i class="fa" [ngClass]="toggle[2] ? 'fa-angle-up': 'fa-angle-down'" aria-hidden="true"></i></h4>
+    <div *ngIf="!toggle[2]">
+      <offer></offer>
+    </div>
+    </section>
+  <section>
+    <h4 (click)="toggle[3] = !toggle[3]">Brand <i class="fa" [ngClass]="toggle[3] ? 'fa-angle-up': 'fa-angle-down'" aria-hidden="true"></i></h4>
+    <div *ngIf="!toggle[3]">
+      <brand></brand>
+    </div>
+  </section>
+  <section>
+    <h4 (click)="toggle[4] = !toggle[4]">Price <i class="fa" [ngClass]="toggle[4] ? 'fa-angle-up': 'fa-angle-down'" aria-hidden="true"></i></h4>
+    <div *ngIf="!toggle[4]">
+      <price></price>
+    </div>
+  </section>
+  <section>
+    <h4 (click)="toggle[5] = !toggle[5]">Rating <i class="fa" [ngClass]="toggle[5] ? 'fa-angle-up': 'fa-angle-down'" aria-hidden="true"></i></h4>
+    <div *ngIf="!toggle[5]">
+      <rating></rating>
+    </div>
+  </section>

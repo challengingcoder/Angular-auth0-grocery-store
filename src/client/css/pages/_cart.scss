@@ -1,0 +1,142 @@
+cart {
+  padding-top: 100px;
+  display: block;
+
+  .empty {
+    margin-bottom: 100px;
+    height: calc(60vh - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .cart {
+
+      img {
+        width: 150px;
+        margin: 0 auto 40px;
+        display: block;
+      }
+
+      h1 {
+        text-align: center;
+        @include font-size(18px);
+        font-weight: bold;
+      }
+
+      p {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .btn {
+        width: 200px;
+        margin: 0px auto;
+        display: block;
+        color:#333;
+      }      
+    }
+  }
+
+  .cart {
+    padding-top: 64px;
+    margin-bottom: 100px;
+
+    ol {
+      margin: 0;
+      list-style: none;
+      margin-top: 4.17647rem;
+      margin-bottom: 20px;
+
+      > li {
+        margin-bottom: 78px;
+        padding-bottom: 76px;
+        border-bottom: 1px solid #d6d6d6;  
+
+        img {
+          width: 203px;
+          text-align: center;
+          margin-right: 42px;
+          margin-top: 2px;
+        }
+
+        .details {
+          display: flex;
+          flex-wrap: wrap;
+
+          h2 {
+            font-size: 24px;
+            line-height: 1.16667;
+            font-weight: 600;
+            letter-spacing: .009em;
+            margin: 0px;
+
+            a {
+              color: #111;
+            }
+          }
+          
+          .price {
+            padding-left: .58824rem;
+            text-align: right;
+            height: 1.64706rem;
+            font-size: 24px;
+            line-height: 1.16667;
+            font-weight: 600;
+            letter-spacing: .009em;
+            color: #111;
+          }
+
+          .actions {
+            float: right;
+            margin-top: 12px;
+            font-size: 17px;
+            line-height: 1.47059;
+            font-weight: 400;
+            letter-spacing: -.022em;
+          }
+        }
+
+        .nutrition {
+          margin-top: 21px;
+          padding-top: 21px;
+          border-top: 1px solid #d6d6d6;
+
+          ul {
+            margin: 0 20px;
+
+            li {
+              width: 33%;
+              float:left;
+              margin-bottom: 15px;
+            }
+          }
+        }
+      }
+    }
+
+    .total {
+      margin-top: 16px;
+      padding-top: 17px;
+        font-size: 24px;
+        line-height: 1.16667;
+        font-weight: 600;
+        letter-spacing: .009em;
+        color: #111;
+
+      .summary {
+        padding-right: 20px;
+      }
+
+      .value {
+        text-align: right;
+        padding-left: 20px;
+      }
+    }
+
+    .btn {
+      margin-top: 35px;
+      width: 360px;
+      float: right;
+    }
+  }
+}

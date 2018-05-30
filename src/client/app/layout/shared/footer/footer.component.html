@@ -1,0 +1,28 @@
+<footer class="reg" *ngIf="!isUser(router.url)">
+  <div class="container">
+    <div class="row">
+      <div class="col col-md-4">
+        <img class="logo" src="/assets/svg/cart.svg" />
+        <p>Find your favorite branded products for the best price! 
+          Get recipes & recommended products, including analytics to see your eating habits.</p>
+        <nav class="social">
+          <li class="fb"><a href="https://www.facebook.com/grceri/"><i class="fa fa-facebook"></i></a></li>
+          <li class="tw"><a href="https://twitter.com/grceri"><i class="fa fa-twitter"></i></a></li>
+          <li class="ig"><a href="https://www.instagram.com/grcerie/"><i class="fa fa-instagram"></i></a></li>
+          <li class="pi"><a href="https://www.pinterest.com/grcery"><i class="fa fa-pinterest"></i></a></li>
+        </nav>
+        <small>Copyright © 2018 Grceri Inc.</small>
+      </div>
+      <article class="col col-md-4 menu">
+        <footer-nav></footer-nav>
+      </article>
+    </div>
+  </div>
+</footer>
+
+<footer class="admin" *ngIf="isUser(router.url)">
+    <div class="container">
+      <img class="logo" src="./assets/svg/logo.svg" />
+      <p>©2018 grceri® All rights reserved. Privacy and Terms</p>
+    </div>
+</footer>

@@ -1,0 +1,5 @@
+<header-app *ngIf= "router.url !== '/' && router.url !== '/login' && !isRegister(router.url) && router.url !== '/pricing'  && router.url !== '/groceries'"></header-app>
+
+<router-outlet></router-outlet>
+
+<footer-app *ngIf= "router.url !== '/login' && !isRegister(router.url)"></footer-app>

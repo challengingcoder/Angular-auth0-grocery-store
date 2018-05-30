@@ -1,0 +1,19 @@
+<div class="arrange">
+  <div class="arrange_unit middle sort">
+    <span>Sort by:</span>
+    <kendo-dropdownlist [textField]="'text'" [valueField]="'value'" [defaultItem]="defaultSort" [data]="sortList"></kendo-dropdownlist>
+  </div>
+  <div class="arrange_unit middle view">
+    <div class="filter-group">
+      <span>View:</span>
+      <div class="btn-group" role="group" aria-label="View Type">
+        <button type="button" [class.active]="sortClass" (click)="switch(1)" class="btn btn-secondary">
+          <span>Grid</span>
+        </button>
+        <button type="button" [class.active]="listClass" (click)="switch(2)" class="btn btn-secondary">
+          <span>List</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+
+
+user {
+
+	section {
+
+		header {
+
+			h1 {
+				display:block;
+				margin: 48px 0;
+			}
+		}
+	}
+
+}
+
+dashboard {
+	header {
+		margin: 48px 0;
+
+		h1 {
+			display:block;
+			margin: 0px;
+			line-height: 1.6em;
+			letter-spacing: -0.03em;
+		}
+
+		p {
+			max-width: 635px;
+			font-size: 15px;
+			line-height: 24px;
+			margin-bottom: 12px;
+		}
+	}
+}

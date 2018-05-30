@@ -1,0 +1,20 @@
+<section class="slider-wrapper" [ngStyle]="style">
+  <ul class="slider-inner" #slider>
+    <li *ngFor="let item of items;" class="slider-item">
+      <ng-container [ngTemplateOutlet]="item.tpl"></ng-container>
+    </li>
+  </ul>
+
+  <nav class="nav">
+    <ul *ngIf="showControls">
+      <li><i class="left fa fa-angle-left" (click)="next()"></i></li>
+      <li><i class="right fa fa-angle-right" (click)="prev()"></i></li>
+    </ul>
+  </nav>
+
+  <nav class="pag">
+    <ul *ngIf="showPagination">
+      <li *ngFor="let item of items;"></li>
+    </ul>
+  </nav>
+</section>

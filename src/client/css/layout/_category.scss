@@ -1,0 +1,154 @@
+category {
+  min-height: 500px;
+  
+  .cat {
+    padding: 30px 0 0;
+
+    .breadcrumb {
+      @include font-size(14px);
+      font-style: italic;
+      background: transparent;
+      padding: 0px;
+      margin-bottom: 20px;
+
+      a {
+        color:#666;
+
+        &:hover {
+          border-bottom: 1px solid #666;
+        }
+      }
+    }
+
+    h1 {
+      font-weight: 500;
+      margin: 0 0 50px;
+      font-family: 'Permanent Marker', sans-serif;
+    }
+  }
+
+  .sidebar {
+
+    section {
+      margin: 0 0 50px;
+
+      h4 {
+        @include font-size(13px);
+        user-select: none;
+        cursor: pointer;
+        font-weight: 700;
+        margin: 0 0 20px 0;
+        text-transform: uppercase;
+
+        i {
+          float: right;
+          color:#333;
+        }
+      }
+
+      price {
+        form {
+          input {
+            @include font-size(12px);
+            display: inline-block;
+            margin: 0px 2%;
+            width: 25%;
+
+            &:first-child {
+              margin-left: 0px;
+            }
+          }
+
+          .btn {
+            width: 26%;
+            display: inline-block;
+            padding: 7px 0;
+            line-height: inherit;
+            margin-left: 4%;
+          }
+        }
+      }
+    }
+  }
+
+  .filters {
+    padding: 0 0 10px 0;
+    margin-bottom: 20px;
+
+    .count {
+      line-height: 30px;
+    }
+
+    .filter {
+      text-align: right;
+
+      .sort {
+        padding-right: 20px;
+
+        kendo-dropdownlist {
+          span {
+            background: #e7e9ec;
+            font-weight: 500;
+            color: #444;
+          }
+        }
+
+       > span {
+          font-family: 'Permanent Marker', sans-serif;
+          margin-right: 10px;
+          vertical-align: middle;
+        }
+      }
+
+      &-group {
+
+        > span {
+          font-family: 'Permanent Marker', sans-serif;
+          margin-right: 10px;
+          vertical-align: middle;
+        }
+
+        * > {
+          display: inline-block;
+        }
+
+        .btn {
+          @include font-size(14px);
+          color: #444;
+          width: inherit;
+          padding: 6px 12px;
+          line-height: 16px;
+          vertical-align: middle;
+          border:1px solid rgba(0,0,0,.08);
+          outline: none;
+
+          &:hover, &.active {
+            border:1px solid rgba(0,0,0,.2);
+          }
+          &.active {
+            cursor: default;
+          }     
+        }
+       
+      }
+
+    }
+    
+  }
+
+  .search-results {
+    .items {
+      display: flex;
+    
+      justify-content: center;
+    
+      flex-flow: row wrap;
+      align-content: flex-end;
+    }
+    
+    .item {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  }
+}

@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="empty" *ngIf="!shoppingCartItems.length">
+    <div class="cart">
+      <img src="./assets/svg/cart.svg" />
+      <h1>Empty Shopping Cart</h1>
+      <p>Looks like you haven't added any items to your shopping cart.</p>
+      <a class="btn" [routerLink]="['/groceries']">Shop Groceries</a>
+    </div>
+  </div>
+  <div class="cart" *ngIf="shoppingCartItems.length">
+    <div class="row">
+      <h1 class="col col-md-6">You have {{shoppingCartItems.length}} items in your bag.</h1>
+    </div>
+    <ol>
+      <li class="item" *ngFor="let item of shoppingCartItems">
+        <div class="row">
+          <div class="col col-md-3">
+            <img [src]="item.img" />
+          </div>      
+          <div class="col col-md-9">
+            <div class="row details">
+              <div class="col col-md-9">
+                <h2><a [routerLink]="['item.name']">{{item.name}}</a></h2>
+              </div>
+              <div class="col col-md-3">
+                <p class="price">{{item.price}}</p>
+                <a class="actions right remove-item" (click)="removeItem(item)">Remove</a>
+              </div>
+            </div>
+            <div class="row nutrition">
+              <ul>
+                <li>fact 1</li>
+                <li>fact 2</li>
+                <li>fact 3</li>
+                <li>fact 4</li>
+                <li>fact 5</li>
+                <li>fact 6</li>
+              </ul>
+            </div>
+          </div>      
+        </div>
+      </li>
+    </ol>
+    <div class="total row col-md-offset-3">
+      <div class="summary col col-md-6">Total</div>
+      <div class="value col col-md-6">{{getTotal() | async}}</div>
+    </div> 
+    <div class="row">
+      <div class="col col-md-9 col-md-offset-3">
+        <button class="btn btn-primary" [routerLink]="['/checkout']">Checkout</button>
+      </div>
+    </div>   
+</div>

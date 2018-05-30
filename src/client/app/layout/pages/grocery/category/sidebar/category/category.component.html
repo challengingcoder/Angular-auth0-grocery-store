@@ -1,0 +1,7 @@
+<ol class="category-list" [class.overflow]="category.length > 15">
+    <li *ngFor="let category of categories, let i = index;">
+      <input type="checkbox" [name]="[i]" (click)="changeFilterStatus(filter)">
+      <span class="count">({{ category.name }})</span>
+      <span class="count">({{ category.length }})</span>
+    </li>
+  </ol>

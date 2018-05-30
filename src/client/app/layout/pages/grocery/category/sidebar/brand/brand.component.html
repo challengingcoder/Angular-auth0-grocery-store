@@ -1,0 +1,9 @@
+<input type="text" [ngModel]="brand" placeholder="Search" />
+
+<ol class="brands-list" [class.overflow]="brands.length > 15">
+    <li *ngFor="let brand of brands, let i = index;">
+      <input type="checkbox" [name]="[i]" (click)="changeFilterStatus(filter)">
+      <span class="count">({{ brand.name }})</span>
+      <span class="count">({{ price.length }})</span>
+    </li>
+  </ol>

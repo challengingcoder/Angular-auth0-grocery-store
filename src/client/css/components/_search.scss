@@ -1,0 +1,134 @@
+.search {
+
+  .search-wrapper {
+
+    .wrapper {
+      @include font-size(18px);
+      @include border-radius(4px 0 0 4px);
+      border-right: none;
+      -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 -1px 0px rgba(0, 0, 0, 0.02);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 -1px 0px rgba(0, 0, 0, 0.02);				position: relative;
+      background: #fff;
+      line-height: 24px;
+      width: 93%;
+      float:left;
+
+      label {
+        padding: 11px;
+        color: #666;
+        float:left;
+        font-weight: 700;
+      }
+
+      .inner-wrapper {
+        width: 71%;
+        float: left;
+        position: relative;
+
+        .loader {
+          position: absolute;
+          right: 10px;
+          top: 13px;
+        }
+
+        .closed {
+          position: absolute;
+          right: 14px;
+          top: 15.5px;
+          cursor: pointer;
+        }
+
+        .food-dropdown {
+          @include border-radius(0 0 4px 4px);
+          border-top: 1px solid #ddd;
+          position: absolute;
+          top: 46px;
+          left: 0px;
+          background-color: #fff;
+          -webkit-box-shadow: 0 21px 38px rgba(0,0,0,.2);
+          box-shadow: 0 21px 38px rgba(0,0,0,.2);
+          max-height: 430px;
+          overflow-y: auto;
+          width: 100%;
+          z-index: 1;
+  
+          li {
+            margin: 0;
+            padding: 8px 15px;
+            color: #000;
+            cursor: pointer;
+            font-size: 14px;
+            line-height: 1.28571em;
+  
+            &:hover {
+              background: #d32323;
+              color: $white;
+            }
+          }
+        }	
+
+        .overflow {
+          overflow: hidden;
+          display:block;
+          position: relative;
+
+          input {
+            width: 94%;
+            border: none;
+            padding: 11px 0;
+            color:#333;
+
+            &::-moz-placeholder {
+              color:#aaa;
+            }
+          }
+        }				
+
+        &::after {
+          position:absolute;
+          right:0px;
+          top:8px;
+          content:'';
+          display:block;
+          border-left:1px solid #ccc;
+          width:1px;
+          height:30px;
+        }
+      }
+
+      select {
+        @include font-size(15px);
+        float: right;
+        width: 29%;
+        padding: 12px;
+        border: none;
+
+        &:focus {
+          outline-width: 0;
+        }
+      }
+    }
+
+    .btn {
+      @include border-radius(0 4px 4px 0);
+      @include box-shadow(none);
+      width: 7%;
+      border-left: none;					
+      border: 0;
+      background: $green;
+      padding: 11px 20px;
+      line-height: 0;
+      border-left: none;
+      float:left;
+
+      &:hover, &:focus {
+        background: #31a756;
+        outline: none;
+      }
+
+      i {
+        @include font-size(16px);
+      }
+    }
+  }
+}
