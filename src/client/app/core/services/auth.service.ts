@@ -29,32 +29,83 @@ export class AuthService {
     private http: Http
   ) {}
 
-  public login(email: string, password: string, renew?: boolean): void {
-    let loginPrepared = Observable.bindCallback(
-      this.auth0.login({
-        realm: "cosmosdb",
-        email,
-        password
-      })
-    );
-    let loginObservable = loginPrepared();
-    let nextHander = authResult => {
-      if (authResult && authResult.accessToken && authResult.idToken) {
-        this.setSession(authResult, renew);
-      }
-    };
+  public login(
+    email: string,
+    password: string,
+    renew?: boolean
+  ): Observable<string> {
+    // let nextHander = authResult => {
+    //   if (authResult && authResult.accessToken && authResult.idToken) {
+    //     this.setSession(authResult, renew);
+    //   }
+    // };
+    //
+    // let errorHandler = err => {
+    //
+    //   //doSomething with error here
+    // };
+    //
+    // let completeHandler = () => {
+    //   console.log("login finished");
+    // };
+    console.log("Hello world");
+    let loginObservable = Observable.create(observer => {
+      this.auth0.login(
+        {
+          realm: "cosmosdb",
+          email,
+          password
+        },
+        (err, authResult) => {
+          if (err) {
+            console.log("hahaha");
+            observer.next(err);
+          } else if (
+            authResult &&
+            authResult.idToken &&
+            authResult.accessToken
+          ) {
+            console.log("hoho");
+            observer.next(authResult);
+          }
+          observer.complete();
+        }
+      );
+    });
 
-    let errorHandler = err => {
-      console.log(err);
-      //throw new Error(`Error: ${err.error_description}. Check the console for further details.`);
-      //doSomething with error here
-    };
+    return loginObservable.do(res => {
+      console.log("haha");
+      //--- Message Service ----
+    });
 
-    let completeHandler = () => {
-      console.log("login finished");
-    };
-
-    loginObservable.subscribe(nextHander, errorHandler, completeHandler);
+    // let loginPrepared = Observable.bindCallback(
+    //   this.auth0.login({
+    //     realm: "cosmosdb",
+    //     email,
+    //     password
+    //   }),
+    //   (err, authResult) => {
+    //     console.log("hahaha");
+    //     if (err) {
+    //       console.log(err);
+    //       throw new Error(
+    //         `Error: ${
+    //           err.error_description
+    //         }. Check the console for further details.`
+    //       );
+    //     } else {
+    //       console.log("12312312312312312312312");
+    //       authResult = null;
+    //       if (authResult && authResult.accessToken && authResult.idToken) {
+    //         this.setSession(authResult, renew);
+    //         return "Successfully logged in";
+    //       }
+    //       return "Login failed";
+    //     }
+    //   }
+    // );
+    // let loginObservable = loginPrepared();
+    // return loginObservable;
   }
 
   public signup(
