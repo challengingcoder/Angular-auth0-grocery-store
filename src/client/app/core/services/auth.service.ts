@@ -63,24 +63,31 @@ export class AuthService {
     plan?: string,
     options?: object
   ): void {
-    this.auth0.redirect.signupAndLogin(
-      {
+    let signupPrepared = Observable.bindCallback(
+      this.auth0.redirect.signupAndLogin({
         realm: "cosmosdb",
         email,
         password,
         app_metadata: { plan: plan },
         user_metadata: options
-      },
-      err => {
-        if (err) {
-          console.log(err);
-          alert(
-            `Error: ${err.description}. Check the console for further details.`
-          );
-          return;
-        }
-      }
+      })
     );
+    let signupObservable = signupPrepared();
+    let nextHander = () => {};
+
+    let errorHandler = err => {
+      console.log(err);
+      alert(
+        `Error: ${err.description}. Check the console for further details.`
+      );
+      return;
+    };
+
+    let completeHandler = () => {
+      console.log("Signup finished");
+    };
+
+    signupObservable.subscribe(nextHander, errorHandler, completeHandler);
   }
 
   public checkUsername(i): Observable<any[]> {
