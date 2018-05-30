@@ -30,25 +30,31 @@ export class AuthService {
   ) {}
 
   public login(email: string, password: string, renew?: boolean): void {
-    this.auth0.login(
-      {
+    let loginPrepared = Observable.bindCallback(
+      this.auth0.login({
         realm: "cosmosdb",
         email,
         password
-      },
-      (err, authResult) => {
-        if (err) {
-          console.log(err);
-          throw new Error(
-            `Error: ${
-              err.error_description
-            }. Check the console for further details.`
-          );
-        } else if (authResult && authResult.accessToken && authResult.idToken) {
-          this.setSession(authResult, renew);
-        }
-      }
+      })
     );
+    let loginObservable = loginPrepared();
+    let nextHander = authResult => {
+      if (authResult && authResult.accessToken && authResult.idToken) {
+        this.setSession(authResult, renew);
+      }
+    };
+
+    let errorHandler = err => {
+      console.log(err);
+      //throw new Error(`Error: ${err.error_description}. Check the console for further details.`);
+      //doSomething with error here
+    };
+
+    let completeHandler = () => {
+      console.log("login finished");
+    };
+
+    loginObservable.subscribe(nextHander, errorHandler, completeHandler);
   }
 
   public signup(
